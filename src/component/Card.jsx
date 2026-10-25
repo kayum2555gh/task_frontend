@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Edit from "../Edit";
-import TodoServices from "../../Services/TodoServices";
+import Edit from "./Edit";
+import TodoServices from "../Services/TodoServices";
 import toast from "react-hot-toast";
 
 const Card = ({ allTask, getUserTask }) => {
@@ -77,7 +77,11 @@ const Card = ({ allTask, getUserTask }) => {
 
         {/* Render only one modal for the selected task */}
         {selectedTask && (
-          <Edit task={selectedTask} setShowModal={handleClose}  getUserTask={getUserTask}/>
+          <Edit
+            task={selectedTask}
+            setShowModal={handleClose}
+            getUserTask={getUserTask}
+          />
         )}
       </div>
     </>

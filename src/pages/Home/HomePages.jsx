@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Navbar from "../../component/Navbar";
 import PopModal from "../../component/PopModal";
 import TodoServices from "../../Services/TodoServices";
-import Card from "../../component/card";
+import Card from "../../component/Card/Card";
 import Spinner from "../../component/Spinner";
 
 const HomePages = () => {

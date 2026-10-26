@@ -22,7 +22,6 @@ const Register = () => {
         const res = await AuthServices.registerUser(data);
         toast.success(res.data.message);
         navigate('/login');
-        console.log(res.data);
 
        } catch (err) {
         toast.error(getErrorMessage(err));

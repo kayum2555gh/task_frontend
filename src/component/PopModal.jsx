@@ -26,7 +26,7 @@ const PopModal = ({
         return toast.error("Please provide title or Description");
       }
        const todo = await TodoServices.createTodo(data);
-      //  console.log(todo);
+    
        setShowModal(false);
        toast.success("Task is created successfully")
        getUserTask();

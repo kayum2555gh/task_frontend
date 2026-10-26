@@ -18,8 +18,7 @@ const Login = () => {
         const res = await AuthServices.loginUser(data);
         toast.success(res.data.message);
         navigate('/home');
-        localStorage.setItem("todoapp", JSON.stringify(res.data))
-        console.log(res.data);
+        localStorage.setItem("todoapp", JSON.stringify(res.data));
 
        } catch (err) {
         toast.error(getErrorMessage(err));
@@ -62,4 +61,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Login;

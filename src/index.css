@@ -1,71 +1,240 @@
-.add-task{
+.add-task {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 15px;
     margin-top: 20px;
+    flex-wrap: wrap;
 }
 
-.add-task h1{
+.add-task h1 {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: bold;
+    margin: 0;
 }
 
 .add-task input[type="search"] {
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
+    min-width: 0;
     border-radius: 5px;
     padding: 10px;
     outline: none;
-    border: none;
     border: 1.5px solid black;
+    box-sizing: border-box;
+    flex: 1;
 }
 
-.add-task button{
-    width: 300px;
+.add-task button {
+    width: 100%;
+    max-width: 300px;
+    flex-shrink: 0;
 }
-
 
 /* ============= CARD ========= */
-.chead{
+.card-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 20px 0;
+    box-sizing: border-box;
 }
-.chead .task-inc{
+
+.card-container .card {
+    margin: 0;
+    width: 100%;
+    max-width: 18em;
+    flex: 0 1 18em;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.chead {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.chead h6 {
+    overflow-wrap: anywhere;
+}
+
+.chead .task-inc {
     background-color: #f7e373;
     padding: 5px 10px;
     font-family: cursive;
     border-radius: 5px;
 }
-.chead .task-cmp{
+
+.chead .task-cmp {
     background-color: #adfa49;
     padding: 5px 10px;
     font-family: cursive;
     border-radius: 5px;
 }
 
-.card-container{
+.card-body {
+    overflow-wrap: anywhere;
+}
+
+.card-body p {
+    overflow-wrap: anywhere;
+}
+
+.card-footer {
     display: flex;
-    flex-direction: row;
-    padding: 20px;
     flex-wrap: wrap;
+    gap: 8px;
 }
 
-.card-container .card{
-    margin-left: 30px;
-    width: 18em;
-}
-
-/* filter conatiner */
-.filter-container{
+/* ================= FILTER CONTAINER ================= */
+.filter-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 20px 0px;
+    gap: 15px;
+    margin: 20px 0;
+    padding: 0 15px;
+    flex-wrap: wrap;
 }
 
-.filter-group select{
-    margin-left: 20px;
+.filter-container h4 {
+    margin: 0;
+}
+
+.filter-group select {
+    margin-left: 0;
     border: none;
     padding: 10px;
     border-radius: 5px;
+    max-width: 100%;
+}
+
+/* ================= NO TASK MESSAGE ================= */
+.no-task {
+    width: 100%;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+/* ================= TABLETS ================= */
+@media (max-width: 992px) {
+    .add-task {
+        gap: 12px;
+    }
+
+    .add-task input[type="search"] {
+        max-width: none;
+    }
+
+    .add-task button {
+        width: auto;
+    }
+
+    .card-container {
+        gap: 15px;
+    }
+
+    .card-container .card {
+        flex: 1 1 16em;
+        max-width: calc(50% - 8px);
+    }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 576px) {
+    .add-task {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+        margin-top: 15px;
+    }
+
+    .add-task h1 {
+        font-size: 1.8rem;
+    }
+
+    .add-task input[type="search"] {
+        width: 100%;
+        max-width: 100%;
+        flex: auto;
+    }
+
+    .add-task button {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .card-container {
+        padding: 15px 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+    .card-container .card {
+        width: 100%;
+        max-width: 100%;
+        flex: 1 1 auto;
+    }
+
+    .filter-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        margin: 15px 0;
+        padding: 0;
+    }
+
+    .filter-container h4 {
+        font-size: 1.1rem;
+    }
+
+    .filter-group select {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .chead {
+        gap: 6px;
+    }
+
+    .chead .task-inc,
+    .chead .task-cmp {
+        padding: 5px 8px;
+        font-size: 0.8rem;
+    }
+
+    .no-task {
+        font-size: 1.5rem;
+    }
+}
+
+/* ================= SMALL MOBILE ================= */
+@media (max-width: 360px) {
+    .add-task h1 {
+        font-size: 1.5rem;
+    }
+
+    .card-container {
+        padding: 10px 0;
+    }
+
+    .card-container .card {
+        font-size: 0.9rem;
+    }
+
+    .chead {
+        flex-direction: column;
+    }
+
+    .chead .task-inc,
+    .chead .task-cmp {
+        align-self: flex-start;
+    }
 }

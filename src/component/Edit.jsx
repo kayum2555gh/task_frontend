@@ -14,7 +14,7 @@ const Edit = ({ task, setShowModal , getUserTask}) => {
 
     const handleSelectChange = (e) => {
         setIscompleted(e.target.value == 'true');
-        // console.log(isCompleted)
+    
     }
 
     const id = task?._id;

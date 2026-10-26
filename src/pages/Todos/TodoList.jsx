@@ -19,7 +19,6 @@ const TodoList = () => {
     try {
       const { data } = await TodoServices.getAllTodo(id);
       setLoading(false);
-      // console.log(data);
       setAllTask(data?.todos);
     } catch (error) {
       setLoading(false);

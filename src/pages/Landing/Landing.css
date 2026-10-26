@@ -1,53 +1,152 @@
-.hero{
+.hero {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 2rem;
     max-width: 1100px;
+    width: 100%;
     margin: 0 auto;
+    padding: 2rem;
+    box-sizing: border-box;
 }
 
-.intro-text{
+.intro-text {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1.8rem;
     margin-bottom: 1rem;
+    flex: 1;
+    min-width: 0;
 }
 
-.intro-text p{
+.intro-text p {
     margin-bottom: 1.8rem;
+    overflow-wrap: break-word;
 }
 
-.tagline1{
+.tagline1 {
     color: #1a2e35;
 }
 
-.tagline2{
+.tagline2 {
     color: #ff775f;
 }
 
-.btn{
+.btn {
     margin-top: 1rem;
     display: inline-block;
     padding: 0.8rem 1rem;
     text-decoration: none;
     border-radius: 6px;
     color: #fff;
-    
+    box-sizing: border-box;
+
 }
 
-.red{
+.red {
     margin-right: 1rem;
     background-color: #ff775f;
-    
+
 }
 
-.red:hover{
+.red:hover {
     background-color: #fe826a;
 }
 
-.blue{
+.blue {
     background-color: #1a2e35;
 }
-.blue:hover{
+
+.blue:hover {
     background-color: #334e57;
+}
+
+.hero-img {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-img img {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    .hero {
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .intro-text {
+        font-size: 1.5rem;
+    }
+
+    .hero-img img {
+        max-width: 320px;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 576px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+
+    .intro-text {
+        width: 100%;
+        font-size: 1.3rem;
+        margin-bottom: 0;
+    }
+
+    .intro-text h1 {
+        font-size: 2rem;
+    }
+
+    .intro-text p {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-img {
+        width: 100%;
+    }
+
+    .hero-img img {
+        max-width: 100%;
+    }
+
+    .btn {
+        padding: 0.7rem 0.9rem;
+        font-size: 0.95rem;
+    }
+
+    .red {
+        margin-right: 0.5rem;
+    }
+}
+
+/* Very small mobile devices */
+@media (max-width: 360px) {
+    .intro-text h1 {
+        font-size: 1.7rem;
+    }
+
+    .intro-text p {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        padding: 0.65rem 0.75rem;
+        font-size: 0.85rem;
+    }
 }

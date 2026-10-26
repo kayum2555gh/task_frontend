@@ -35,14 +35,14 @@ const HomePages = () => {
 
   const userData = JSON.parse(localStorage.getItem("todoapp"));
   const id = userData && userData?.user.id;
-  // console.log(id);
+
 
   const getUserTask = async () => {
     setLoading(true);
 
     try {
       const { data } = await TodoServices.getAllTodo(id);
-      // console.log(data);
+      
       setLoading(false);
       setAllTask(data?.todos);
     } catch (error) {
